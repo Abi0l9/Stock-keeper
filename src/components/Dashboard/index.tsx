@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import StoreServices from "../../services/store";
-import { Store } from "../../types";
+import { StockType, Store } from "../../types";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+type Props = {
+  stocks: StockType[];
+};
 
 function Dashboard() {
-  const [store, setStore] = useState<Store>();
-  useEffect(() => {
-    setStore(StoreServices.getAll());
-  }, []);
+  const stocks = useSelector((state: Props) => state.stocks);
   return (
     <div>
-      {store?.stock.map((s) => (
-        <div key={s.id}>
-          <h4>Name: {s.name}</h4>
-          <p>
-            Price: {s.price} <br /> Amount in store: {s.amount}
-            <br />
-            Total: {s.amount * s.price}
-          </p>
-        </div>
-      ))}
+      <h2>Stock Lists</h2>
+      <ul>
+        {stocks &&
+          stocks.map((s) => (
+            <li key={s.id}>
+              <Link to={`/stock/${s.id}`}> {s.name}</Link>
+            </li>
+          ))}
+      </ul>
     </div>
   );
 }

@@ -1,16 +1,16 @@
-interface Stock {
+export interface StockType {
   id: number;
   name: string;
   price: number;
   amount: number;
 }
 
-interface Sales extends Stock {
+interface Sales extends StockType {
   date: string;
 }
 
 export interface Store {
-  stock: Stock[];
+  stock: StockType[];
   sales: Sales[];
   purchases?: [];
   returns?: [];
@@ -20,3 +20,6 @@ export interface Store {
     total: 0;
   };
 }
+
+export type obj = Record<string, never>;
+// export type MainStore = Pick<Store, stock>
