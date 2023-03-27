@@ -22,4 +22,7 @@ export interface Store {
 }
 
 export type obj = Record<string, never>;
-// export type MainStore = Pick<Store, stock>
+
+export type DashboardProps = {
+  stocks: StockType[];
+};

@@ -1,4 +1,4 @@
-import { StockType, Store } from "../../types";
+import { StockType } from "../../types";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
