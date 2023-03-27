@@ -1,6 +1,7 @@
 import { StockType } from "../../types";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import AddStockForm from "../Stock/AddStockForm";
 
 type Props = {
   stocks: StockType[];
@@ -12,13 +13,17 @@ function Dashboard() {
     <div>
       <h2>Stock Lists</h2>
       <ul>
-        {stocks &&
-          stocks.map((s) => (
-            <li key={s.id}>
-              <Link to={`/stock/${s.id}`}> {s.name}</Link>
-            </li>
-          ))}
+        {stocks.length > 0
+          ? stocks.map((s) => (
+              <li key={s.id}>
+                <Link to={`/stock/${s.id}`}> {s.name}</Link>
+              </li>
+            ))
+          : "Nothing is here"}
       </ul>
+      <div>
+        <AddStockForm />
+      </div>
     </div>
   );
 }

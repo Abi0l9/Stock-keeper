@@ -1,5 +1,5 @@
 import Dashboard from "./components/Dashboard";
-import Menu from "./Menu";
+import Menu from "./components/Menu";
 import Purchases from "./components/Purchases";
 import Sales from "./components/Sales";
 import { Routes, Route } from "react-router-dom";
