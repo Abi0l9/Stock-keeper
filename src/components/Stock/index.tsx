@@ -12,7 +12,7 @@ function Stock() {
   const stocks = useSelector((state: DashboardProps) => state.stocks);
   const match = useMatch("/stock/:id");
   const selectedStock = match
-    ? stocks.find((stock) => stock.id === Number(match.params.id))!
+    ? stocks.find((stock) => stock.id === Number(match.params.id))
     : null;
 
   const handleBtnClick = () => {
