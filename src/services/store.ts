@@ -11,5 +11,10 @@ const addStock = async (obj: Store) => {
   return request.data;
 };
 
+const updateStock = async (obj: Store) => {
+  const request = await axios.put<Store>(baseUrl, obj);
+  return request.data;
+};
+
 // eslint-disable-next-line
-export default { getAll, addStock };
+export default { getAll, addStock, updateStock };

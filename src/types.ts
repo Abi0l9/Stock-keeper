@@ -15,7 +15,7 @@ export interface PurchasesType extends StockType {
 
 export interface Store {
   stock: StockType[];
-  sales?: SalesType[];
+  sales: SalesType[];
   purchases: PurchasesType[];
   returns?: [];
   record?: {

@@ -10,7 +10,7 @@ function Purchases() {
       <h3>Purchases history</h3>
       {purchases.length &&
         purchases.map((trans) => (
-          <div key={trans.id}>
+          <div key={trans.date + " " + Math.floor(Math.random() * 20000)}>
             <p>
               {trans.name} || {trans.amount} || #{trans.price} ||
               {trans.date}

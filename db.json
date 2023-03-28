@@ -5,7 +5,349 @@
         "id": 1,
         "name": "fanta",
         "price": 200,
-        "amount": 25
+        "amount": 33
+      },
+      {
+        "id": 2,
+        "name": "coke",
+        "price": 250,
+        "amount": 34
+      },
+      {
+        "id": 23,
+        "name": "werty",
+        "amount": 244,
+        "price": 10
+      },
+      {
+        "id": 4576,
+        "name": "dadad",
+        "amount": 235,
+        "price": 23
+      },
+      {
+        "id": 450,
+        "name": "guguru",
+        "amount": 10,
+        "price": 50
+      },
+      {
+        "id": 2710,
+        "name": "eretwe",
+        "amount": 2345,
+        "price": 23
+      },
+      {
+        "id": 336,
+        "name": "agbado",
+        "amount": 500,
+        "price": 20
+      },
+      {
+        "id": 2459,
+        "name": "agbalumo",
+        "amount": 248,
+        "price": 12
+      },
+      {
+        "id": 427,
+        "name": "garri",
+        "amount": 12,
+        "price": 1500
+      },
+      {
+        "id": 2196,
+        "name": "pawpaw",
+        "amount": 100,
+        "price": 50
+      },
+      {
+        "id": 1238,
+        "name": "umbrella",
+        "amount": 200,
+        "price": 100
+      },
+      {
+        "id": 1875,
+        "name": "dew",
+        "amount": 280,
+        "price": 151
+      },
+      {
+        "id": 3469,
+        "name": "ewedu",
+        "amount": 13,
+        "price": 50
+      },
+      {
+        "id": 3164,
+        "name": "elubo",
+        "amount": 3,
+        "price": 2000
+      },
+      {
+        "id": 4113,
+        "name": "maggi",
+        "amount": 300,
+        "price": 1200
+      },
+      {
+        "id": 2037,
+        "name": "akara",
+        "amount": 24,
+        "price": 12
+      },
+      {
+        "id": 623,
+        "name": "isu",
+        "amount": 20,
+        "price": 1500
+      },
+      {
+        "id": 614,
+        "name": "yanibo",
+        "amount": 21,
+        "price": 500
+      },
+      {
+        "id": 4226,
+        "name": "akamu",
+        "amount": 28,
+        "price": 50
+      },
+      {
+        "id": 2163,
+        "name": "spoon",
+        "amount": 31,
+        "price": 20
+      },
+      {
+        "id": 2580,
+        "name": "koko",
+        "amount": 1,
+        "price": 200
+      },
+      {
+        "id": 3665,
+        "name": "eja",
+        "amount": 10,
+        "price": 50
+      }
+    ],
+    "sales": [
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:35:02 AM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:35:03 AM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:41:02 AM"
+      },
+      {
+        "id": 3164,
+        "name": "elubo",
+        "amount": 1,
+        "price": 2000,
+        "date": "3/29/2023, 12:41:23 AM"
+      },
+      {
+        "id": 2459,
+        "name": "agbalumo",
+        "amount": 1,
+        "price": 12,
+        "date": "3/29/2023, 12:41:35 AM"
+      },
+      {
+        "id": 2459,
+        "name": "agbalumo",
+        "amount": 1,
+        "price": 12,
+        "date": "3/29/2023, 12:41:38 AM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:44:16 AM"
+      },
+      {
+        "id": 3665,
+        "name": "eja",
+        "amount": 1,
+        "price": 50,
+        "date": "3/29/2023, 12:48:35 AM"
+      },
+      {
+        "id": 3665,
+        "name": "eja",
+        "amount": 1,
+        "price": 50,
+        "date": "3/29/2023, 12:48:35 AM"
+      },
+      {
+        "id": 4226,
+        "name": "akamu",
+        "amount": 1,
+        "price": 50,
+        "date": "3/29/2023, 12:51:17 AM"
+      },
+      {
+        "id": 4226,
+        "name": "akamu",
+        "amount": 1,
+        "price": 50,
+        "date": "3/29/2023, 12:51:17 AM"
+      }
+    ],
+    "purchases": [
+      {
+        "id": 614,
+        "name": "yanibo",
+        "amount": 20,
+        "price": 500,
+        "date": "3/28/2023, 1:17:46 PM"
+      },
+      {
+        "id": 4226,
+        "name": "akamu",
+        "amount": 30,
+        "price": 50,
+        "date": "3/28/2023, 1:19:07 PM"
+      },
+      {
+        "id": 2163,
+        "name": "spoon",
+        "amount": 30,
+        "price": 20,
+        "date": "3/28/2023, 1:48:53 PM"
+      },
+      {
+        "id": 2580,
+        "name": "koko",
+        "amount": 1,
+        "price": 200,
+        "date": "3/28/2023, 10:31:48 PM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 30,
+        "date": "3/29/2023, 12:12:05 AM"
+      },
+      {
+        "id": 2,
+        "name": "coke",
+        "price": 250,
+        "amount": 1,
+        "date": "3/29/2023, 12:13:31 AM"
+      },
+      {
+        "id": 2037,
+        "name": "akara",
+        "amount": 1,
+        "price": 12,
+        "date": "3/29/2023, 12:16:23 AM"
+      },
+      {
+        "id": 4576,
+        "name": "dadad",
+        "amount": 1,
+        "price": 23,
+        "date": "3/29/2023, 12:16:35 AM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:34:50 AM"
+      },
+      {
+        "id": 3164,
+        "name": "elubo",
+        "amount": 1,
+        "price": 2000,
+        "date": "3/29/2023, 12:44:24 AM"
+      },
+      {
+        "id": 3164,
+        "name": "elubo",
+        "amount": 1,
+        "price": 2000,
+        "date": "3/29/2023, 12:44:25 AM"
+      },
+      {
+        "id": 3164,
+        "name": "elubo",
+        "amount": 1,
+        "price": 2000,
+        "date": "3/29/2023, 12:44:25 AM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:47:45 AM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:47:45 AM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:47:46 AM"
+      },
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 1,
+        "date": "3/29/2023, 12:47:46 AM"
+      },
+      {
+        "id": 3665,
+        "name": "eja",
+        "amount": 12,
+        "price": 50,
+        "date": "3/29/2023, 12:48:30 AM"
+      },
+      {
+        "id": 614,
+        "name": "yanibo",
+        "amount": 1,
+        "price": 500,
+        "date": "3/29/2023, 12:52:26 AM"
+      }
+    ],
+    "returns": [],
+    "stocks": [
+      {
+        "id": 1,
+        "name": "fanta",
+        "price": 200,
+        "amount": 26
       },
       {
         "id": 2,
@@ -120,32 +462,13 @@
         "name": "spoon",
         "amount": 30,
         "price": 20
-      }
-    ],
-    "sales": [],
-    "purchases": [
-      {
-        "id": 614,
-        "name": "yanibo",
-        "amount": 20,
-        "price": 500,
-        "date": "3/28/2023, 1:17:46 PM"
       },
       {
-        "id": 4226,
-        "name": "akamu",
-        "amount": 30,
-        "price": 50,
-        "date": "3/28/2023, 1:19:07 PM"
-      },
-      {
-        "id": 2163,
-        "name": "spoon",
-        "amount": 30,
-        "price": 20,
-        "date": "3/28/2023, 1:48:53 PM"
+        "id": 2580,
+        "name": "koko",
+        "amount": 1,
+        "price": 200
       }
-    ],
-    "returns": []
+    ]
   }
 }
