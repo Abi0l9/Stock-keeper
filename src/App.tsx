@@ -6,10 +6,10 @@ import { Routes, Route } from "react-router-dom";
 import Stock from "./components/Stock";
 import { useEffect } from "react";
 import { getAllStocks } from "./reducers/stock";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "./hooks";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getAllStocks());

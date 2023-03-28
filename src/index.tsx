@@ -2,15 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { configureStore } from "@reduxjs/toolkit";
-import stockReducer from "./reducers/stock";
-import { Provider } from "react-redux";
+import store from "./store";
 
-const store = configureStore({
-  reducer: {
-    stocks: stockReducer,
-  },
-});
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

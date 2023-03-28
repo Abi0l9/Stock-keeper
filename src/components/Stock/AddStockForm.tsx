@@ -1,9 +1,16 @@
 import { useField } from "../../hooks";
-import { StockType } from "../../types";
+import { DashboardProps, StockType, Store } from "../../types";
 import { generateId } from "../../utils";
 import stockServices from "../../services/store";
+import { useSelector } from "react-redux";
+
+interface Props {
+  stock: DashboardProps[];
+}
 
 function AddStockForm() {
+  const stocks = useSelector((state: Props) => state);
+
   const nameField = useField("text", "name");
   const amountField = useField("number", "amount");
   const priceField = useField("number", "price");
@@ -18,8 +25,18 @@ function AddStockForm() {
       price: Number(priceField.value),
     };
 
-    const req = await stockServices.getOne(data);
-    console.log(req);
+    let all: StockType[];
+
+    if ("stocks" in stocks) {
+      console.log(stocks.stocks);
+      const newData: Store = {
+        stock: stocks.stocks as StockType[], //here
+        sales: [],
+      };
+      const req = await stockServices.addStock(newData);
+    }
+
+    console.log();
   };
 
   return (

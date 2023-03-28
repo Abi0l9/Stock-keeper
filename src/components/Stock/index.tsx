@@ -10,6 +10,7 @@ function Stock() {
   const btnDisplay = { display: openForm ? "none" : "" };
 
   const stocks = useSelector((state: DashboardProps) => state.stocks);
+  console.log(stocks);
   const match = useMatch("/stock/:id");
   const selectedStock = match
     ? stocks.find((stock) => stock.id === Number(match.params.id))

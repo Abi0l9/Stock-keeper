@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice /* PayloadAction */ } from "@reduxjs/toolkit";
 import StoreServices from "../services/store";
 import { Store } from "../types";
 
@@ -19,9 +19,11 @@ export const { getStocks } = stockSlice.actions;
 
 type getStocksPayld = { payload: any; type: "stock/getStocks" };
 type DispatchGetAll = (arg: getStocksPayld) => void;
+type Dispatch = <AnyAction>(arg: getStocksPayld) => AnyAction;
+// type Ds = <AnyAction>;
 
 export const getAllStocks = () => {
-  return async (dispatch: DispatchGetAll) => {
+  return async (dispatch: Dispatch) => {
     const stock = await StoreServices.getAll();
     dispatch(getStocks(stock));
   };
