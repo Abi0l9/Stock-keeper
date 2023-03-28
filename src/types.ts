@@ -11,7 +11,7 @@ interface Sales extends StockType {
 
 export interface Store {
   stock: StockType[];
-  sales: Sales[];
+  sales?: Sales[];
   purchases?: [];
   returns?: [];
   record?: {

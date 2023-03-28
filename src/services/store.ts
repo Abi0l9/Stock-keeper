@@ -9,7 +9,7 @@ const getAll = async () => {
 // type d = Record<string, Store>;
 
 const addStock = async (obj: Store) => {
-  const request = await axios.patch<Store>(baseUrl, obj);
+  const request = await axios.post<Store>(baseUrl, obj);
   return request.data;
 };
 

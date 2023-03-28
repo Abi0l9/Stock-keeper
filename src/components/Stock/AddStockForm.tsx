@@ -1,15 +1,17 @@
 import { useField } from "../../hooks";
-import { DashboardProps, StockType, Store } from "../../types";
+import { StockType, Store } from "../../types";
+import { useNavigate } from "react-router-dom";
 import { generateId } from "../../utils";
 import stockServices from "../../services/store";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
-interface Props {
-  stock: DashboardProps[];
-}
+type Props = Record<"stocks", Store>;
 
 function AddStockForm() {
-  const stocks = useSelector((state: Props) => state);
+  const store = useSelector((state: Props) => state.stocks);
+  const navigate = useNavigate();
+  const id = generateId();
 
   const nameField = useField("text", "name");
   const amountField = useField("number", "amount");
@@ -17,7 +19,6 @@ function AddStockForm() {
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const id = generateId();
     const data: StockType = {
       id,
       name: nameField.value,
@@ -25,18 +26,21 @@ function AddStockForm() {
       price: Number(priceField.value),
     };
 
-    let all: StockType[];
+    const newData: Store = {
+      ...store,
+      stock: [...store.stock, data],
+    };
 
-    if ("stocks" in stocks) {
-      console.log(stocks.stocks);
-      const newData: Store = {
-        stock: stocks.stocks as StockType[], //here
-        sales: [],
-      };
-      const req = await stockServices.addStock(newData);
+    try {
+      await stockServices.addStock(newData);
+      navigate("*");
+    } catch (error) {
+      let errMsg = "Something occured, ";
+      if (axios.isAxiosError(error)) {
+        errMsg += error.message;
+      }
+      console.log(errMsg);
     }
-
-    console.log();
   };
 
   return (
@@ -44,13 +48,13 @@ function AddStockForm() {
       <form onSubmit={handleSubmit}>
         <p>
           <label htmlFor={nameField.id}>{nameField.name}</label>:{" "}
-          <input {...nameField} />
+          <input {...nameField} required />
           <br />
           <label htmlFor={amountField.id}>{amountField.name}</label>:{" "}
-          <input {...amountField} />
+          <input {...amountField} required />
           <br />
           <label htmlFor={priceField.id}>{priceField.name}</label>:{" "}
-          <input {...priceField} />
+          <input {...priceField} required />
         </p>
         <button type="submit">Add</button>
       </form>

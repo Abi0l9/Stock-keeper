@@ -8,24 +8,23 @@ const stockSlice = createSlice({
   name: "stock",
   initialState: {},
   reducers: {
-    getStocks(state: A, action) {
+    getStore(state: A, action) {
       state = action.payload;
-      return state.stock;
+      return state;
     },
   },
 });
 
-export const { getStocks } = stockSlice.actions;
+export const { getStore } = stockSlice.actions;
 
-type getStocksPayld = { payload: any; type: "stock/getStocks" };
-type DispatchGetAll = (arg: getStocksPayld) => void;
+type getStocksPayld = { payload: any; type: "stock/getStore" };
 type Dispatch = <AnyAction>(arg: getStocksPayld) => AnyAction;
-// type Ds = <AnyAction>;
 
 export const getAllStocks = () => {
   return async (dispatch: Dispatch) => {
     const stock = await StoreServices.getAll();
-    dispatch(getStocks(stock));
+    console.log(stock);
+    dispatch(getStore(stock));
   };
 };
 
