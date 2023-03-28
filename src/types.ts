@@ -5,14 +5,18 @@ export interface StockType {
   amount: number;
 }
 
-interface Sales extends StockType {
+interface SalesType extends StockType {
+  date: string;
+}
+
+export interface PurchasesType extends StockType {
   date: string;
 }
 
 export interface Store {
   stock: StockType[];
-  sales?: Sales[];
-  purchases?: [];
+  sales?: SalesType[];
+  purchases: PurchasesType[];
   returns?: [];
   record?: {
     asset: 0;
@@ -26,3 +30,5 @@ export type obj = Record<string, never>;
 export type DashboardProps = {
   stocks: StockType[];
 };
+
+export type Transaction = SalesType | PurchasesType;

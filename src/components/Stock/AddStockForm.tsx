@@ -1,8 +1,6 @@
 import { useAppDispatch, useField } from "../../hooks";
-import { StockType, Store } from "../../types";
-import { useNavigate } from "react-router-dom";
+import { PurchasesType, StockType, Store } from "../../types";
 import { generateId } from "../../utils";
-import stockServices from "../../services/store";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { addOneStock } from "../../reducers/stock";
@@ -11,31 +9,47 @@ type Props = Record<"stocks", Store>;
 
 function AddStockForm() {
   const store = useSelector((state: Props) => state.stocks);
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const id = generateId();
 
-  const nameField = useField("text", "name");
-  const amountField = useField("number", "amount");
-  const priceField = useField("number", "price");
+  const { clearField: nameFieldClear, ...nameField } = useField("text", "name");
+  const { clearField: amountFieldClear, ...amountField } = useField(
+    "number",
+    "amount"
+  );
+  const { clearField: priceFieldClear, ...priceField } = useField(
+    "number",
+    "price"
+  );
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const data: StockType = {
+    const collectedData = {
       id,
       name: nameField.value,
       amount: Number(amountField.value),
       price: Number(priceField.value),
     };
+    const data: StockType = {
+      ...collectedData,
+    };
+
+    const newPurchase: PurchasesType = {
+      ...collectedData,
+      date: String(new Date().toLocaleString()),
+    };
 
     const newData: Store = {
       ...store,
+      purchases: [...store.purchases, newPurchase],
       stock: [...store.stock, data],
     };
 
     try {
       dispatch(addOneStock(newData));
-      navigate("*");
+      nameFieldClear();
+      amountFieldClear();
+      priceFieldClear();
     } catch (error) {
       let errMsg = "Something occured, ";
       if (axios.isAxiosError(error)) {

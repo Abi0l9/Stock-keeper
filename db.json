@@ -66,10 +66,86 @@
         "name": "umbrella",
         "amount": 200,
         "price": 100
+      },
+      {
+        "id": 1875,
+        "name": "dew",
+        "amount": 280,
+        "price": 151
+      },
+      {
+        "id": 3469,
+        "name": "ewedu",
+        "amount": 10,
+        "price": 50
+      },
+      {
+        "id": 3164,
+        "name": "elubo",
+        "amount": 1,
+        "price": 2000
+      },
+      {
+        "id": 4113,
+        "name": "maggi",
+        "amount": 300,
+        "price": 1200
+      },
+      {
+        "id": 2037,
+        "name": "akara",
+        "amount": 23,
+        "price": 12
+      },
+      {
+        "id": 623,
+        "name": "isu",
+        "amount": 20,
+        "price": 1500
+      },
+      {
+        "id": 614,
+        "name": "yanibo",
+        "amount": 20,
+        "price": 500
+      },
+      {
+        "id": 4226,
+        "name": "akamu",
+        "amount": 30,
+        "price": 50
+      },
+      {
+        "id": 2163,
+        "name": "spoon",
+        "amount": 30,
+        "price": 20
       }
     ],
     "sales": [],
-    "purchases": [],
+    "purchases": [
+      {
+        "id": 614,
+        "name": "yanibo",
+        "amount": 20,
+        "price": 500,
+        "date": "3/28/2023, 1:17:46 PM"
+      },
+      {
+        "id": 4226,
+        "name": "akamu",
+        "amount": 30,
+        "price": 50,
+        "date": "3/28/2023, 1:19:07 PM"
+      },
+      {
+        "id": 2163,
+        "name": "spoon",
+        "amount": 30,
+        "price": 20,
+        "date": "3/28/2023, 1:48:53 PM"
+      }
+    ],
     "returns": []
   }
 }

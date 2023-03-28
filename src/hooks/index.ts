@@ -12,7 +12,12 @@ export const useField = (type: string, name: string) => {
     setValue(e.target.value);
   };
 
+  const clearField = () => {
+    setValue("");
+  };
+
   return {
+    clearField,
     name,
     id: name,
     type,
