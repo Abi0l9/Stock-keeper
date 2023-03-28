@@ -54,6 +54,18 @@
         "name": "garri",
         "amount": 12,
         "price": 1500
+      },
+      {
+        "id": 2196,
+        "name": "pawpaw",
+        "amount": 100,
+        "price": 50
+      },
+      {
+        "id": 1238,
+        "name": "umbrella",
+        "amount": 200,
+        "price": 100
       }
     ],
     "sales": [],
