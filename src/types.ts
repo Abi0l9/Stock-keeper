@@ -2,7 +2,7 @@ export interface StockType {
   id: number;
   name: string;
   price: number;
-  amount: number;
+  unit: number;
 }
 
 interface SalesType extends StockType {
@@ -12,6 +12,8 @@ interface SalesType extends StockType {
 export interface PurchasesType extends StockType {
   date: string;
 }
+
+export type TransactionType = SalesType | PurchasesType;
 
 export interface Store {
   stock: StockType[];

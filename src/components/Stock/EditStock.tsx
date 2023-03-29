@@ -1,22 +1,59 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "../../hooks";
+import { updateOneStock } from "../../reducers/stock";
+import { TransactionType, StockType, Store } from "../../types";
+import { UnitCompare, dateParser, handleBulkUpdate } from "../../utils";
 
 type Props = {
+  id: number;
+  name: string;
   price: number;
-  amount: number;
+  unit: number;
   setOpenForm: React.Dispatch<React.SetStateAction<Boolean>>;
 };
 
-const EditStock = ({ price, amount, setOpenForm }: Props) => {
+type storeType = Record<"stocks", Store>;
+
+const EditStock = ({ id, name, price, unit, setOpenForm }: Props) => {
+  const stocks = useSelector((state: storeType) => state.stocks);
+  const dispatch = useAppDispatch();
+
   const [newPrice, setNewPrice] = useState<number>(price);
-  const [newAmount, setNewAmount] = useState<number>(amount);
+  const [newUnit, setNewUnit] = useState<number>(unit);
+  const [newDate, setNewDate] = useState<string>(String(Date.now()));
 
   const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
     setOpenForm(false);
-    console.log({ newPrice, newAmount });
+    const date = dateParser(newDate);
 
-    setNewPrice(price);
-    setNewAmount(amount);
+    const collectedData: StockType = {
+      id,
+      name,
+      price: newPrice,
+      unit: newUnit,
+    };
+
+    const transactionData: TransactionType = {
+      ...collectedData,
+      unit: newUnit,
+      date,
+    };
+
+    const unitPrice: UnitCompare = [unit, newUnit];
+
+    const store = handleBulkUpdate(
+      stocks,
+      collectedData,
+      transactionData,
+      unitPrice
+    );
+    dispatch(updateOneStock(store));
+
+    setNewPrice(newPrice);
+    setNewUnit(newUnit);
+    setNewDate("");
   };
   return (
     <div>
@@ -30,21 +67,36 @@ const EditStock = ({ price, amount, setOpenForm }: Props) => {
             id="price"
             value={newPrice}
             onChange={(e) => setNewPrice(Number(e.target.value))}
+            required
           />
         </p>
         <p>
-          <label htmlFor="amount">Available in store: </label>
+          <label htmlFor="unit">Units in store: </label>
           <input
-            title="amount"
+            title="unit"
             type="number"
-            name="amount"
-            id="amount"
-            value={newAmount}
-            onChange={(e) => setNewAmount(Number(e.target.value))}
+            name="unit"
+            id="unit"
+            value={newUnit}
+            onChange={(e) => setNewUnit(Number(e.target.value))}
+            required
+          />
+        </p>
+        <p>
+          <label htmlFor="date">Date: </label>
+          <input
+            title="date"
+            type="datetime-local"
+            name="date"
+            id="date"
+            value={newDate}
+            onChange={(e) =>
+              !e.target.value ? setNewDate(newDate) : setNewDate(e.target.value)
+            }
           />
         </p>
         <button onClick={handleSubmit} type="submit">
-          Make changes
+          Update stock
         </button>
       </form>
     </div>

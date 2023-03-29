@@ -13,9 +13,9 @@ function AddStockForm() {
   const id = generateId();
 
   const { clearField: nameFieldClear, ...nameField } = useField("text", "name");
-  const { clearField: amountFieldClear, ...amountField } = useField(
+  const { clearField: unitFieldClear, ...unitField } = useField(
     "number",
-    "amount"
+    "unit"
   );
   const { clearField: priceFieldClear, ...priceField } = useField(
     "number",
@@ -27,7 +27,7 @@ function AddStockForm() {
     const collectedData = {
       id,
       name: nameField.value,
-      amount: Number(amountField.value),
+      unit: Number(unitField.value),
       price: Number(priceField.value),
     };
     const data: StockType = {
@@ -48,7 +48,7 @@ function AddStockForm() {
     try {
       dispatch(addOneStock(newData));
       nameFieldClear();
-      amountFieldClear();
+      unitFieldClear();
       priceFieldClear();
     } catch (error) {
       let errMsg = "Something occured, ";
@@ -66,8 +66,8 @@ function AddStockForm() {
           <label htmlFor={nameField.id}>{nameField.name}</label>:{" "}
           <input {...nameField} required />
           <br />
-          <label htmlFor={amountField.id}>{amountField.name}</label>:{" "}
-          <input {...amountField} required />
+          <label htmlFor={unitField.id}>{unitField.name}</label>:{" "}
+          <input {...unitField} required />
           <br />
           <label htmlFor={priceField.id}>{priceField.name}</label>:{" "}
           <input {...priceField} required />

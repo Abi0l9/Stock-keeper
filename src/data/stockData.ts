@@ -6,20 +6,20 @@ export const data: Store = {
       id: 1,
       name: "fanta",
       price: 200,
-      amount: 25,
+      unit: 25,
     },
     {
       id: 2,
       name: "coke",
       price: 250,
-      amount: 30,
+      unit: 30,
     },
   ],
   sales: [
     {
       id: 1,
       name: "coke",
-      amount: 2,
+      unit: 2,
       price: 400,
       date: "2023-01-23",
     },

@@ -13,9 +13,10 @@ function Stock() {
 
   const stocks = useSelector((state: Props) => state.stocks.stock);
   const match = useMatch("/stock/:id");
-  const selectedStock = match
-    ? stocks.find((stock) => stock.id === Number(match.params.id))
-    : null;
+  const selectedStock =
+    stocks && match
+      ? stocks.find((stock) => stock.id === Number(match.params.id))
+      : null;
 
   const handleBtnClick = () => {
     setOpenForm(!openForm);
@@ -28,9 +29,9 @@ function Stock() {
           <h4>{selectedStock.name}</h4>
           <p>
             Price: {selectedStock.price} <br /> Available in store:{" "}
-            {selectedStock.amount}
+            {selectedStock.unit}
             <br />
-            Total: {selectedStock.amount * selectedStock.price}
+            Total: {selectedStock.unit * selectedStock.price}
           </p>
         </div>
       )}
@@ -42,8 +43,10 @@ function Stock() {
       <div style={formDisplay}>
         {selectedStock && (
           <EditStock
+            id={selectedStock.id}
+            name={selectedStock.name}
             price={selectedStock.price}
-            amount={selectedStock.amount}
+            unit={selectedStock.unit}
             setOpenForm={setOpenForm}
           />
         )}

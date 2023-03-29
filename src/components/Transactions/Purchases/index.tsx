@@ -8,15 +8,19 @@ function Purchases() {
   return (
     <div>
       <h3>Purchases history</h3>
-      {purchases.length &&
-        purchases.map((trans) => (
-          <div key={trans.date + " " + Math.floor(Math.random() * 20000)}>
-            <p>
-              {trans.name} || {trans.amount} || #{trans.price} ||
-              {trans.date}
-            </p>
-          </div>
-        ))}
+
+      {purchases && purchases.length > 0
+        ? purchases.map((trans) => (
+            <div key={trans.date + " " + Math.floor(Math.random() * 20000)}>
+              <p>
+                <span>{trans.name} </span> ||
+                <span> {trans.unit} </span> ||
+                <span> #{trans.price} </span> ||
+                <span> {trans.date} </span>
+              </p>
+            </div>
+          ))
+        : "Your purchases history will show up here!"}
     </div>
   );
 }

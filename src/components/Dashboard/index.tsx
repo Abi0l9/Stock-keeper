@@ -14,19 +14,19 @@ function Dashboard() {
   const handlePurchases = (item: StockType, type: "sell" | "buy") => {
     const stock = stocks.stock.map((s) => {
       if (s.id === item.id) {
-        let amount = s.amount;
+        let unit = s.unit;
         if (type === "sell") {
-          amount--;
+          unit--;
         } else if (type === "buy") {
-          amount++;
+          unit++;
         }
 
-        if (amount < 1) {
-          amount = 0;
-        } else if (type === "buy" && amount === 0) {
-          amount++;
+        if (unit < 1) {
+          unit = 0;
+        } else if (type === "buy" && unit === 0) {
+          unit++;
         }
-        const dataToReturn = { ...s, amount };
+        const dataToReturn = { ...s, unit };
         return dataToReturn;
       }
       return s;
@@ -42,7 +42,7 @@ function Dashboard() {
           ...stocks.purchases,
           {
             ...data,
-            amount: 1,
+            unit: 1,
             date: String(new Date().toLocaleString()),
           },
         ],
@@ -56,12 +56,12 @@ function Dashboard() {
           ...stocks.sales,
           {
             ...data,
-            amount: 1,
+            unit: 1,
             date: String(new Date().toLocaleString()),
           },
         ],
       };
-      if (data.amount > 0) {
+      if (data.unit > 0) {
         dispatch(updateOneStock(newStore));
       }
     }
@@ -71,11 +71,11 @@ function Dashboard() {
     <div>
       <h2>Stock Lists</h2>
       <ul>
-        {stocks.stock
+        {stocks.stock && stocks.stock.length > 0
           ? stocks.stock.map((s) => (
               <li key={s.id}>
                 <Link to={`/stock/${s.id}`}> {s.name}</Link> || units in store :{" "}
-                {s.amount}
+                {s.unit}
                 <div>
                   <button
                     onClick={() => handlePurchases(s, "buy")}
