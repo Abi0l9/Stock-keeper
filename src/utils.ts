@@ -46,7 +46,8 @@ export const handleBulkUpdate = (
       stock,
       sales: [...stocks.sales, { ...transactionData, unit: oldUnit - newUnit }],
     };
-  } else
+  } //this handles price change
+  else
     return {
       ...stocks,
       stock,
@@ -75,6 +76,31 @@ export const sorter = (
         return [...arr].sort((a, b): number => a.price - b.price);
       case "price (high - low)":
         return [...arr].sort((a, b): number => b.price - a.price);
+      case "unit (high - low)":
+        return [...arr].sort((a, b): number => b.unit - a.unit);
+      case "unit (low - high)":
+        return [...arr].sort((a, b): number => a.unit - b.unit);
+      default:
+        return arr;
+    }
+  }
+  return arr;
+};
+
+export const stockSorter = (
+  arr: StockType[],
+  type: sort = "name (a-z)"
+): StockType[] => {
+  if (arr) {
+    switch (type) {
+      case "name (a-z)":
+        return [...arr].sort((a, b) => a.name.localeCompare(b.name));
+      case "name (z-a)":
+        return [...arr].sort((a, b) => b.name.localeCompare(a.name));
+      // case "price (low - high)":
+      //   return [...arr].sort((a, b): number => a.price - b.price);
+      // case "price (high - low)":
+      //   return [...arr].sort((a, b): number => b.price - a.price);
       case "unit (high - low)":
         return [...arr].sort((a, b): number => b.unit - a.unit);
       case "unit (low - high)":

@@ -1,17 +1,27 @@
-import { StockType, Store } from "../../types";
+import { sort, StockType, Store } from "../../types";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AddStockForm from "../Stock/AddStockForm";
 import { useAppDispatch } from "../../hooks";
 import { updateOneStock } from "../../reducers/stock";
+import { generalSortOptions } from "../../const";
+import { useState } from "react";
+import { stockSorter } from "../../utils";
+import HeaderStat from "../Statistics/HeaderStat";
 
 type Props = Record<"stocks", Store>;
 
 function Dashboard() {
   const stocks = useSelector((state: Props) => state.stocks);
   const dispatch = useAppDispatch();
+  const [selectedValue, setSelectedValue] = useState<sort>("name (a-z)");
+  const sortedData = stockSorter(stocks.stock, selectedValue);
 
-  const handlePurchases = (item: StockType, type: "sell" | "buy") => {
+  const handleFieldSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValue(e.target.value as sort);
+  };
+
+  const handleSingleTransaction = (item: StockType, type: "sell" | "buy") => {
     const stock = stocks.stock.map((s) => {
       if (s.id === item.id) {
         let unit = s.unit;
@@ -70,21 +80,36 @@ function Dashboard() {
   return (
     <div>
       <h2>Stock Lists</h2>
+      <div>
+        <HeaderStat />
+      </div>
+      <br />
+      <div>
+        <form>
+          <select name="sort" title="sort" onChange={handleFieldSelectChange}>
+            {generalSortOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </form>
+      </div>
       <ul>
-        {stocks.stock && stocks.stock.length > 0
-          ? stocks.stock.map((s) => (
+        {sortedData && sortedData.length > 0
+          ? sortedData.map((s) => (
               <li key={s.id}>
                 <Link to={`/stock/${s.id}`}> {s.name}</Link> || units in store :{" "}
                 {s.unit}
                 <div>
                   <button
-                    onClick={() => handlePurchases(s, "buy")}
+                    onClick={() => handleSingleTransaction(s, "buy")}
                     type="button"
                   >
                     buy one
                   </button>
                   <button
-                    onClick={() => handlePurchases(s, "sell")}
+                    onClick={() => handleSingleTransaction(s, "sell")}
                     type="button"
                   >
                     sell one

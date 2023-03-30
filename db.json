@@ -23,7 +23,19 @@
         "id": 3640,
         "name": "Textbooks",
         "price": 1500,
-        "unit": 23
+        "unit": 11
+      },
+      {
+        "id": 3594,
+        "name": "Mouse",
+        "price": 550,
+        "unit": 12
+      },
+      {
+        "id": 3425,
+        "name": "Viju",
+        "price": 200,
+        "unit": 100
       }
     ],
     "sales": [
@@ -278,6 +290,118 @@
         "price": 1500,
         "unit": 1,
         "date": "3/30/2023, 1:43:55 AM"
+      },
+      {
+        "id": 3594,
+        "name": "Mouse",
+        "price": 550,
+        "unit": 1,
+        "date": "3/30/2023, 11:54:55 AM"
+      },
+      {
+        "id": 3594,
+        "name": "Mouse",
+        "price": 550,
+        "unit": 1,
+        "date": "3/30/2023, 11:54:56 AM"
+      },
+      {
+        "id": 3594,
+        "name": "Mouse",
+        "price": 550,
+        "unit": 1,
+        "date": "3/30/2023, 11:54:57 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:41 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:42 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:42 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:42 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:42 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:42 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:43 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:43 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:43 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:43 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:44 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 11:56:45 AM"
+      },
+      {
+        "id": 3425,
+        "name": "Viju",
+        "price": 200,
+        "unit": 150,
+        "date": "3/30/2023, 11:57:31 AM"
       }
     ],
     "purchases": [
@@ -483,6 +607,27 @@
         "price": 200,
         "unit": 1,
         "date": "3/30/2023, 1:43:47 AM"
+      },
+      {
+        "id": 3594,
+        "name": "Mouse",
+        "unit": 10,
+        "price": 500,
+        "date": "3/30/2023, 11:52:01 AM"
+      },
+      {
+        "id": 3594,
+        "name": "Mouse",
+        "price": 550,
+        "unit": 5,
+        "date": "3/30/2023, 11:53:00 AM"
+      },
+      {
+        "id": 3425,
+        "name": "Viju",
+        "unit": 250,
+        "price": 200,
+        "date": "3/30/2023, 11:57:19 AM"
       }
     ]
   }
