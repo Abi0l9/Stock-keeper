@@ -8,21 +8,36 @@ type Props = Record<"stocks", Store>;
 
 function Sales() {
   const sales = useSelector((state: Props) => state.stocks.sales);
+  const [selectedValue, setSelectedValue] = useState<sort>("latest");
+  const sortedData = sorter(sales, selectedValue);
+
+  const handleFieldSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValue(e.target.value as sort);
+  };
 
   return (
     <div>
       <h3>Sales history</h3>
-      {sales && sales.length > 0
-        ? [...sales]
-            .sort((a, b): number => Date.parse(b.date) - Date.parse(a.date))
-            .map((trans) => (
-              <div key={trans.date + " " + Math.floor(Math.random() * 20000)}>
-                <p>
-                  {trans.name} || {trans.unit} || #{trans.price} ||
-                  {trans.date}
-                </p>
-              </div>
-            ))
+      <div>
+        <form>
+          <select name="sort" title="sort" onChange={handleFieldSelectChange}>
+            {options.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </form>
+      </div>
+      {sortedData && sortedData.length > 0
+        ? sortedData.map((trans) => (
+            <div key={trans.date + " " + Math.floor(Math.random() * 20000)}>
+              <p>
+                {trans.name} || {trans.unit} || #{trans.price} ||
+                {trans.date}
+              </p>
+            </div>
+          ))
         : "Your sales history will show up here!"}
     </div>
   );

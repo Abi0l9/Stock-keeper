@@ -5,19 +5,25 @@
         "id": 4186,
         "name": "Exercise Books",
         "price": 350,
-        "unit": 200
+        "unit": 203
       },
       {
         "id": 4653,
         "name": "Recharge card - 100",
         "price": 200,
-        "unit": 50
+        "unit": 48
       },
       {
         "id": 875,
         "name": "Earpiece",
         "price": 300,
-        "unit": 1
+        "unit": 0
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 23
       }
     ],
     "sales": [
@@ -181,6 +187,97 @@
         "price": 300,
         "unit": 3,
         "date": "3/29/2023, 11:13:46 PM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 5,
+        "date": "3/30/2023, 1:41:12 AM"
+      },
+      {
+        "id": 4653,
+        "name": "Recharge card - 100",
+        "price": 200,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:45 AM"
+      },
+      {
+        "id": 4653,
+        "name": "Recharge card - 100",
+        "price": 200,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:45 AM"
+      },
+      {
+        "id": 4653,
+        "name": "Recharge card - 100",
+        "price": 200,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:45 AM"
+      },
+      {
+        "id": 4653,
+        "name": "Recharge card - 100",
+        "price": 200,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:46 AM"
+      },
+      {
+        "id": 875,
+        "name": "Earpiece",
+        "price": 300,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:50 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:53 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:54 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:54 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:54 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:54 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:55 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:55 AM"
       }
     ],
     "purchases": [
@@ -337,6 +434,55 @@
         "unit": 12,
         "price": 300,
         "date": "3/29/2023, 3:00:11 PM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "unit": 25,
+        "price": 1500,
+        "date": "3/30/2023, 1:40:47 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 10,
+        "date": "3/30/2023, 1:40:52 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:42 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:43 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:43 AM"
+      },
+      {
+        "id": 4653,
+        "name": "Recharge card - 100",
+        "price": 200,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:47 AM"
+      },
+      {
+        "id": 4653,
+        "name": "Recharge card - 100",
+        "price": 200,
+        "unit": 1,
+        "date": "3/30/2023, 1:43:47 AM"
       }
     ]
   }
