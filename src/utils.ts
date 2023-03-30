@@ -1,4 +1,11 @@
-import { TransactionType, sort, StockType, Store, StoreTypes } from "./types";
+import {
+  TransactionType,
+  StatDataReturnValues,
+  sort,
+  StockType,
+  Store,
+  StoreTypes,
+} from "./types";
 
 export type UnitCompare = [number, number];
 
@@ -112,36 +119,56 @@ export const stockSorter = (
   return arr;
 };
 
-export const headerStatGetter = (arr: StoreTypes): Record<string, any> => {
-  const stats =
-    arr &&
-    arr
+export const headerStatGetter = (arr: StoreTypes): StatDataReturnValues => {
+  if (arr) {
+    const stats = arr
       .map((sale) => sale.name)
       .reduce((obj: Record<string, any>, item): Record<string, number> => {
         obj[item] = obj[item] ? (obj[item] += 1) : 1;
         return obj;
       }, {});
 
-  const data = Object.values(stats).sort((a, b) => a - b);
+    const data = Object.values(stats).sort((a, b) => Number(a) - Number(b));
 
-  const lowest = data.at(0);
-  const [lowestStock, lowestValue] = Object.entries(stats).filter(
-    (i) => i.at(1) === lowest
-  )[0];
+    const lowest = data.at(0);
+    const [lowestStock] = Object.entries(stats).filter(
+      (i) => i.at(1) === lowest
+    )[0];
 
-  const highest = data.at(-1);
-  const [highestStock, highestValue] = Object.entries(stats).filter(
-    (i) => i.at(1) === highest
-  )[0];
+    const highest = data.at(-1);
+    const [highestStock] = Object.entries(stats).filter(
+      (i) => i.at(1) === highest
+    )[0];
 
+    const highestValue = arr
+      .filter((d) => d.name === highestStock)
+      .map((s) => s.unit)
+      .reduce((a, b) => a + b, 0);
+
+    const lowestValue = arr
+      .filter((d) => d.name === lowestStock)
+      .map((s) => s.unit)
+      .reduce((a, b) => a + b, 0);
+
+    return {
+      highest: {
+        stock: highestStock,
+        value: highestValue,
+      },
+      lowest: {
+        stock: lowestStock,
+        value: lowestValue,
+      },
+    };
+  }
   return {
     highest: {
-      stock: highestStock,
-      value: highestValue,
+      stock: "",
+      value: 0,
     },
     lowest: {
-      stock: lowestStock,
-      value: lowestValue,
+      stock: "",
+      value: 0,
     },
   };
 };

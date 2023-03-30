@@ -3,26 +3,24 @@ import { headerStatGetter } from "../../utils";
 
 function HeaderStat() {
   const sales = useStock().sales;
-  const purchases = useStock().purchases;
 
   const { highest: highestSales, lowest: lowestSales } =
     headerStatGetter(sales);
-  const { highest: highestPurchases, lowest: lowestPurchases } =
-    headerStatGetter(purchases);
 
+  //   console.log(h);
   return (
     <div>
       <article>
         <b>Most sales</b> <br />
         Item: {highestSales.stock}
         <br />
-        Units Sold: {highestSales.value}
+        Units Sold: <b>{highestSales.value}</b>
       </article>
       <article>
-        <b>Most Entries</b> <br />
-        Item: {highestPurchases.stock}
+        <b>Lowest Sales</b> <br />
+        Item: {lowestSales.stock}
         <br />
-        Units Brought In: {highestPurchases.value}
+        Units Sold: <b>{lowestSales.value}</b>
       </article>
     </div>
   );

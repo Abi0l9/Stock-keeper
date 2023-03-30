@@ -18,6 +18,7 @@ function Purchases() {
       <h3>Purchases history</h3>
       <div>
         <form>
+          <span>Sort: </span>
           <select name="sort" title="sort" onChange={handleFieldSelectChange}>
             {options.map((option) => (
               <option key={option} value={option}>

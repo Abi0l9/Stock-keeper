@@ -78,11 +78,12 @@ function Dashboard() {
     <div>
       <h2>Stock Lists</h2>
       <div>
-        <HeaderStat />
+        {stocks.sales && stocks.sales.length ? <HeaderStat /> : "No sales yet"}
       </div>
       <br />
       <div>
         <form>
+          <span>Sort: </span>
           <select name="sort" title="sort" onChange={handleFieldSelectChange}>
             {generalSortOptions.map((option) => (
               <option key={option} value={option}>

@@ -46,3 +46,13 @@ export type sort =
   | "name (z-a)";
 
 export type optionsDataType = string[];
+
+export type StatDataType = {
+  value: number;
+  stock: string;
+};
+
+export type StatDataReturnValues = {
+  highest: StatDataType;
+  lowest: StatDataType;
+};
