@@ -33,7 +33,7 @@ export type DashboardProps = {
   stocks: StockType[];
 };
 
-export type Transaction = SalesType | PurchasesType;
+export type StoreTypes = SalesType[] | PurchasesType[] | StockType[];
 
 export type sort =
   | "oldest"

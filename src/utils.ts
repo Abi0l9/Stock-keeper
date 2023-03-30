@@ -1,4 +1,4 @@
-import { TransactionType, sort, StockType, Store } from "./types";
+import { TransactionType, sort, StockType, Store, StoreTypes } from "./types";
 
 export type UnitCompare = [number, number];
 
@@ -110,4 +110,38 @@ export const stockSorter = (
     }
   }
   return arr;
+};
+
+export const headerStatGetter = (arr: StoreTypes): Record<string, any> => {
+  const stats =
+    arr &&
+    arr
+      .map((sale) => sale.name)
+      .reduce((obj: Record<string, any>, item): Record<string, number> => {
+        obj[item] = obj[item] ? (obj[item] += 1) : 1;
+        return obj;
+      }, {});
+
+  const data = Object.values(stats).sort((a, b) => a - b);
+
+  const lowest = data.at(0);
+  const [lowestStock, lowestValue] = Object.entries(stats).filter(
+    (i) => i.at(1) === lowest
+  )[0];
+
+  const highest = data.at(-1);
+  const [highestStock, highestValue] = Object.entries(stats).filter(
+    (i) => i.at(1) === highest
+  )[0];
+
+  return {
+    highest: {
+      stock: highestStock,
+      value: highestValue,
+    },
+    lowest: {
+      stock: lowestStock,
+      value: lowestValue,
+    },
+  };
 };

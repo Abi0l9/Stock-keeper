@@ -1,13 +1,11 @@
-import { useSelector } from "react-redux";
-import { Store, sort } from "../../../types";
+import { sort } from "../../../types";
 import { options } from "../../../const";
 import { sorter } from "../../../utils";
 import { useState } from "react";
-
-type Props = Record<"stocks", Store>;
+import { useStock } from "../../../hooks";
 
 function Purchases() {
-  const purchases = useSelector((state: Props) => state.stocks.purchases);
+  const purchases = useStock().purchases;
   const [selectedValue, setSelectedValue] = useState<sort>("latest");
   const sortedData = sorter(purchases, selectedValue);
 

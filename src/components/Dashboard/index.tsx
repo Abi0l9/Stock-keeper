@@ -1,18 +1,15 @@
 import { sort, StockType, Store } from "../../types";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import AddStockForm from "../Stock/AddStockForm";
-import { useAppDispatch } from "../../hooks";
+import { useAppDispatch, useStock } from "../../hooks";
 import { updateOneStock } from "../../reducers/stock";
 import { generalSortOptions } from "../../const";
 import { useState } from "react";
 import { stockSorter } from "../../utils";
 import HeaderStat from "../Statistics/HeaderStat";
 
-type Props = Record<"stocks", Store>;
-
 function Dashboard() {
-  const stocks = useSelector((state: Props) => state.stocks);
+  const stocks = useStock();
   const dispatch = useAppDispatch();
   const [selectedValue, setSelectedValue] = useState<sort>("name (a-z)");
   const sortedData = stockSorter(stocks.stock, selectedValue);
@@ -106,7 +103,7 @@ function Dashboard() {
                     onClick={() => handleSingleTransaction(s, "buy")}
                     type="button"
                   >
-                    buy one
+                    add to store
                   </button>
                   <button
                     onClick={() => handleSingleTransaction(s, "sell")}

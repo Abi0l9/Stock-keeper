@@ -5,7 +5,7 @@
         "id": 4186,
         "name": "Exercise Books",
         "price": 350,
-        "unit": 203
+        "unit": 202
       },
       {
         "id": 4653,
@@ -36,6 +36,12 @@
         "name": "Viju",
         "price": 200,
         "unit": 100
+      },
+      {
+        "id": 4849,
+        "name": "Solar",
+        "price": 10000,
+        "unit": 27
       }
     ],
     "sales": [
@@ -402,6 +408,13 @@
         "price": 200,
         "unit": 150,
         "date": "3/30/2023, 11:57:31 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "3/30/2023, 1:44:12 PM"
       }
     ],
     "purchases": [
@@ -628,6 +641,20 @@
         "unit": 250,
         "price": 200,
         "date": "3/30/2023, 11:57:19 AM"
+      },
+      {
+        "id": 4849,
+        "name": "Solar",
+        "unit": 12,
+        "price": 10000,
+        "date": "3/30/2023, 1:44:53 PM"
+      },
+      {
+        "id": 4849,
+        "name": "Solar",
+        "price": 10000,
+        "unit": 15,
+        "date": "3/30/2023, 1:45:00 PM"
       }
     ]
   }
