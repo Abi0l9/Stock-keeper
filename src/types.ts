@@ -34,3 +34,15 @@ export type DashboardProps = {
 };
 
 export type Transaction = SalesType | PurchasesType;
+
+export type sort =
+  | "oldest"
+  | "latest"
+  | "unit (high - low)"
+  | "unit (low - high)"
+  | "price (high - low)"
+  | "price (low - high)"
+  | "name (a-z)"
+  | "name (z-a)";
+
+export type optionsDataType = string[];

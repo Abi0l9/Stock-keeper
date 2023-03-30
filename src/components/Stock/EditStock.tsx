@@ -53,8 +53,9 @@ const EditStock = ({ id, name, price, unit, setOpenForm }: Props) => {
 
     setNewPrice(newPrice);
     setNewUnit(newUnit);
-    setNewDate("");
+    setNewDate(String(Date.now()));
   };
+
   return (
     <div>
       <form>

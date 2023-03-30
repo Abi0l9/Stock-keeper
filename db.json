@@ -12,6 +12,12 @@
         "name": "Recharge card - 100",
         "price": 200,
         "unit": 50
+      },
+      {
+        "id": 875,
+        "name": "Earpiece",
+        "price": 300,
+        "unit": 1
       }
     ],
     "sales": [
@@ -140,6 +146,41 @@
         "price": 350,
         "unit": 70,
         "date": "3/29/2023, 2:55:15 PM"
+      },
+      {
+        "id": 875,
+        "name": "Earpiece",
+        "price": 300,
+        "unit": 5,
+        "date": "3/29/2023, 3:00:00 PM"
+      },
+      {
+        "id": 875,
+        "name": "Earpiece",
+        "price": 300,
+        "unit": 1,
+        "date": "3/29/2023, 11:13:39 PM"
+      },
+      {
+        "id": 875,
+        "name": "Earpiece",
+        "price": 300,
+        "unit": 1,
+        "date": "3/29/2023, 11:13:41 PM"
+      },
+      {
+        "id": 875,
+        "name": "Earpiece",
+        "price": 300,
+        "unit": 1,
+        "date": "3/29/2023, 11:13:42 PM"
+      },
+      {
+        "id": 875,
+        "name": "Earpiece",
+        "price": 300,
+        "unit": 3,
+        "date": "3/29/2023, 11:13:46 PM"
       }
     ],
     "purchases": [
@@ -289,6 +330,13 @@
         "price": 350,
         "unit": 20,
         "date": "1/1/1970, 1:00:00 AM"
+      },
+      {
+        "id": 875,
+        "name": "Earpiece",
+        "unit": 12,
+        "price": 300,
+        "date": "3/29/2023, 3:00:11 PM"
       }
     ]
   }

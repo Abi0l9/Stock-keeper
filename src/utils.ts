@@ -1,4 +1,4 @@
-import { TransactionType, StockType, Store } from "./types";
+import { TransactionType, sort, StockType, Store } from "./types";
 
 export type UnitCompare = [number, number];
 
@@ -8,6 +8,10 @@ export const dateParser = (date: string) => {
   return !isNaN(Number(date))
     ? new Date(Number(date)).toLocaleString()
     : new Date(date).toLocaleString();
+};
+
+export const dateSplitter = (date: string) => {
+  return dateParser(date).split(" ")[0].replace(",", "");
 };
 
 export const handleBulkUpdate = (
@@ -47,4 +51,37 @@ export const handleBulkUpdate = (
       ...stocks,
       stock,
     };
+};
+
+export const sorter = (
+  arr: TransactionType[],
+  type: sort = "latest"
+): TransactionType[] => {
+  if (arr) {
+    switch (type) {
+      case "name (a-z)":
+        return [...arr].sort((a, b) => a.name.localeCompare(b.name));
+      case "name (z-a)":
+        return [...arr].sort((a, b) => b.name.localeCompare(a.name));
+      case "latest":
+        return [...arr].sort(
+          (a, b): number => Date.parse(b.date) - Date.parse(a.date)
+        );
+      case "oldest":
+        return [...arr].sort(
+          (a, b): number => Date.parse(a.date) - Date.parse(b.date)
+        );
+      case "price (low - high)":
+        return [...arr].sort((a, b): number => a.price - b.price);
+      case "price (high - low)":
+        return [...arr].sort((a, b): number => b.price - a.price);
+      case "unit (high - low)":
+        return [...arr].sort((a, b): number => b.unit - a.unit);
+      case "unit (low - high)":
+        return [...arr].sort((a, b): number => a.unit - b.unit);
+      default:
+        return arr;
+    }
+  }
+  return arr;
 };

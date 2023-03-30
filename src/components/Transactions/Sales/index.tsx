@@ -1,5 +1,8 @@
 import { useSelector } from "react-redux";
-import { Store } from "../../../types";
+import { Store, sort } from "../../../types";
+import { options } from "../../../const";
+import { sorter } from "../../../utils";
+import { useState } from "react";
 
 type Props = Record<"stocks", Store>;
 
@@ -9,24 +12,17 @@ function Sales() {
   return (
     <div>
       <h3>Sales history</h3>
-      {/* {sales.map((s) => {
-        switch (s.date) {
-          case "":
-            break;
-
-          default:
-            break;
-        }
-      })} */}
       {sales && sales.length > 0
-        ? sales.map((trans) => (
-            <div key={trans.date + " " + Math.floor(Math.random() * 20000)}>
-              <p>
-                {trans.name} || {trans.unit} || #{trans.price} ||
-                {trans.date}
-              </p>
-            </div>
-          ))
+        ? [...sales]
+            .sort((a, b): number => Date.parse(b.date) - Date.parse(a.date))
+            .map((trans) => (
+              <div key={trans.date + " " + Math.floor(Math.random() * 20000)}>
+                <p>
+                  {trans.name} || {trans.unit} || #{trans.price} ||
+                  {trans.date}
+                </p>
+              </div>
+            ))
         : "Your sales history will show up here!"}
     </div>
   );
