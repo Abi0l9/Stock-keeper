@@ -21,6 +21,10 @@ export const dateSplitter = (date: string) => {
   return dateParser(date).split(" ")[0].replace(",", "");
 };
 
+export const timeSplitter = (date: string) => {
+  return dateParser(date).split(" ").slice(1).join(" ");
+};
+
 export const handleBulkUpdate = (
   stocks: Store,
   item: StockType,
