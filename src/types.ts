@@ -54,5 +54,5 @@ export type StatDataType = {
 
 export type StatDataReturnValues = {
   highest: StatDataType;
-  lowest: StatDataType;
+  totalSales: number;
 };

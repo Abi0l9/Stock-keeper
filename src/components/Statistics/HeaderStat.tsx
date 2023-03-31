@@ -1,26 +1,28 @@
 import { useStock } from "../../hooks";
-import { headerStatGetter } from "../../utils";
+import { salesStatGetter, stockStatGetter } from "../../utils";
 
 function HeaderStat() {
   const sales = useStock().sales;
+  const stock = useStock().stock;
 
-  const { highest: highestSales, lowest: lowestSales } =
-    headerStatGetter(sales);
+  const { highest, totalSales } = salesStatGetter(sales);
+  const assets = stockStatGetter(stock);
 
-  //   console.log(h);
   return (
     <div>
       <article>
         <b>Most sales</b> <br />
-        Item: {highestSales.stock}
+        Item: {highest.stock}
         <br />
-        Units Sold: <b>{highestSales.value}</b>
+        Units Sold: <b>{highest.value}</b>
       </article>
       <article>
-        <b>Lowest Sales</b> <br />
-        Item: {lowestSales.stock}
+        <b>Total Amount of Sales</b> <br />#{totalSales}
         <br />
-        Units Sold: <b>{lowestSales.value}</b>
+      </article>
+      <article>
+        <b>Total Assets in Store</b> <br />#{assets}
+        <br />
       </article>
     </div>
   );

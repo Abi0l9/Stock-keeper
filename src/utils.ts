@@ -119,7 +119,7 @@ export const stockSorter = (
   return arr;
 };
 
-export const headerStatGetter = (arr: StoreTypes): StatDataReturnValues => {
+export const salesStatGetter = (arr: StoreTypes): StatDataReturnValues => {
   if (arr) {
     const stats = arr
       .map((sale) => sale.name)
@@ -130,10 +130,10 @@ export const headerStatGetter = (arr: StoreTypes): StatDataReturnValues => {
 
     const data = Object.values(stats).sort((a, b) => Number(a) - Number(b));
 
-    const lowest = data.at(0);
-    const [lowestStock] = Object.entries(stats).filter(
-      (i) => i.at(1) === lowest
-    )[0];
+    // const lowest = data.at(0);
+    // const [lowestStock] = Object.entries(stats).filter(
+    //   (i) => i.at(1) === lowest
+    // )[0];
 
     const highest = data.at(-1);
     const [highestStock] = Object.entries(stats).filter(
@@ -145,20 +145,20 @@ export const headerStatGetter = (arr: StoreTypes): StatDataReturnValues => {
       .map((s) => s.unit)
       .reduce((a, b) => a + b, 0);
 
-    const lowestValue = arr
-      .filter((d) => d.name === lowestStock)
-      .map((s) => s.unit)
-      .reduce((a, b) => a + b, 0);
+    // const lowestValue = arr
+    //   .filter((d) => d.name === lowestStock)
+    //   .map((s) => s.unit)
+    //   .reduce((a, b) => a + b, 0);
+
+    const totalSales = arr.map((sale) => sale.price).reduce((a, b) => a + b, 0);
 
     return {
       highest: {
         stock: highestStock,
         value: highestValue,
       },
-      lowest: {
-        stock: lowestStock,
-        value: lowestValue,
-      },
+
+      totalSales,
     };
   }
   return {
@@ -166,9 +166,15 @@ export const headerStatGetter = (arr: StoreTypes): StatDataReturnValues => {
       stock: "",
       value: 0,
     },
-    lowest: {
-      stock: "",
-      value: 0,
-    },
+    totalSales: 0,
   };
+};
+
+export const stockStatGetter = (arr: StoreTypes) => {
+  if (arr) {
+    const assets = arr
+      .map((stock) => stock.price * stock.unit)
+      .reduce((a, b) => a + b, 0);
+    return assets;
+  } else return 0;
 };
