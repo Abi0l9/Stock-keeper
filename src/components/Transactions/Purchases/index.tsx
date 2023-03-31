@@ -1,6 +1,6 @@
 import { sort } from "../../../types";
 import { options } from "../../../const";
-import { sorter } from "../../../utils";
+import { sorter, groupTransactionsByDate } from "../../../utils";
 import { useState } from "react";
 import { useStock } from "../../../hooks";
 
@@ -8,6 +8,7 @@ function Purchases() {
   const purchases = useStock().purchases;
   const [selectedValue, setSelectedValue] = useState<sort>("latest");
   const sortedData = sorter(purchases, selectedValue);
+  console.log(groupTransactionsByDate(purchases));
 
   const handleFieldSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedValue(e.target.value as sort);

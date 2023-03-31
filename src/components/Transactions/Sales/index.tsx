@@ -1,6 +1,6 @@
-import { sort } from "../../../types";
+import { sort, TransactionType } from "../../../types";
 import { options } from "../../../const";
-import { sorter } from "../../../utils";
+import { sorter, groupTransactionsByDate } from "../../../utils";
 import { useState } from "react";
 import { useStock } from "../../../hooks";
 
@@ -8,6 +8,9 @@ function Sales() {
   const sales = useStock().sales;
   const [selectedValue, setSelectedValue] = useState<sort>("latest");
   const sortedData = sorter(sales, selectedValue);
+  const groupedData = groupTransactionsByDate(sortedData);
+
+  console.log(groupedData);
 
   const handleFieldSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedValue(e.target.value as sort);
@@ -16,6 +19,22 @@ function Sales() {
   return (
     <div>
       <h3>Sales history</h3>
+      {groupedData.map((data) => (
+        <div>
+          <p>
+            <b>{Object.keys(data)}</b>
+          </p>
+          <div>
+            {Object.values(data).map((trans) =>
+              trans.map((t) => (
+                <div>
+                  {t.name} | {t.unit} | {t.price} | {t.unit * t.price}
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      ))}
       <div>
         <form>
           <span>Sort: </span>

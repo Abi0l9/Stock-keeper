@@ -119,7 +119,9 @@ export const stockSorter = (
   return arr;
 };
 
-export const salesStatGetter = (arr: StoreTypes): StatDataReturnValues => {
+export const salesStatGetter = (
+  arr: TransactionType[]
+): StatDataReturnValues => {
   if (arr) {
     const stats = arr
       .map((sale) => sale.name)
@@ -177,4 +179,32 @@ export const stockStatGetter = (arr: StoreTypes) => {
       .reduce((a, b) => a + b, 0);
     return assets;
   } else return 0;
+};
+
+export const lastAddedProduct = (transaction: StoreTypes): StockType => {
+  return transaction.at(-1)!;
+};
+
+type d = Record<string, TransactionType[]>;
+
+export const groupTransactionsByDate = (transactions: TransactionType[]) => {
+  let objToReturn: Record<string, TransactionType[]> = {};
+
+  if (transactions)
+    transactions.forEach((transaction) => {
+      const date = dateSplitter(transaction.date);
+
+      if (objToReturn[date]) {
+        //if date exists as a key with an array as value, push transaction
+        objToReturn[date].push(transaction);
+      } else objToReturn[date] = []; //else initialize with an empty array with date as a key
+    });
+
+  const mapToKVpairs = Object.entries(objToReturn).map(([key, values]) => {
+    return {
+      [key]: values,
+    };
+  });
+
+  return mapToKVpairs;
 };

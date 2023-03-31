@@ -5,7 +5,7 @@ export interface StockType {
   unit: number;
 }
 
-interface SalesType extends StockType {
+export interface SalesType extends StockType {
   date: string;
 }
 
