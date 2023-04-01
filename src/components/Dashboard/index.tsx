@@ -77,9 +77,7 @@ function Dashboard() {
   return (
     <div>
       <h2>Stock Lists</h2>
-      <div>
-        {stocks.sales && stocks.sales.length ? <HeaderStat /> : "No sales yet"}
-      </div>
+      <div>{stocks.sales?.length ? <HeaderStat /> : "No sales yet"}</div>
       <br />
       <div>
         <form>
@@ -94,7 +92,7 @@ function Dashboard() {
         </form>
       </div>
       <ul>
-        {sortedData && sortedData.length > 0
+        {sortedData?.length > 0
           ? sortedData.map((s) => (
               <li key={s.id}>
                 <Link to={`/stock/${s.id}`}> {s.name}</Link> || units in store :{" "}
