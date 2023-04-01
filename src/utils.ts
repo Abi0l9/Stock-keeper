@@ -189,8 +189,6 @@ export const lastAddedProduct = (transaction: StoreTypes): StockType => {
   return transaction.at(-1)!;
 };
 
-type d = Record<string, TransactionType[]>;
-
 export const groupTransactionsByDate = (transactions: TransactionType[]) => {
   let objToReturn: Record<string, TransactionType[]> = {};
 
@@ -199,7 +197,7 @@ export const groupTransactionsByDate = (transactions: TransactionType[]) => {
       const date = dateSplitter(transaction.date);
 
       if (objToReturn[date]) {
-        //if date exists as a key with an array as value, push transaction
+        //if date exists as a key, with an array as value, push transaction
         objToReturn[date].push(transaction);
       } else objToReturn[date] = []; //else initialize with an empty array with date as a key
     });
