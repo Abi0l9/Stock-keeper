@@ -189,8 +189,6 @@ export const lastAddedProduct = (transaction: StoreTypes): StockType => {
   return transaction.at(-1)!;
 };
 
-type d = Record<string, TransactionType[]>;
-
 export const groupTransactionsByDate = (transactions: TransactionType[]) => {
   let objToReturn: Record<string, TransactionType[]> = {};
 

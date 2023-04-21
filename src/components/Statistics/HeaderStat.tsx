@@ -32,7 +32,7 @@ function HeaderStat() {
       </article>
       <article>
         <b>Last Added Product</b> <br />
-        <span>{lastAdded.name}</span>
+        <span>{lastAdded?.name}</span>
         <br />
       </article>
     </div>
