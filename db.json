@@ -5,13 +5,13 @@
         "id": 4186,
         "name": "Exercise Books",
         "price": 350,
-        "unit": 147
+        "unit": 148
       },
       {
         "id": 4653,
         "name": "Recharge card - 100",
         "price": 200,
-        "unit": 47
+        "unit": 70
       },
       {
         "id": 875,
@@ -23,7 +23,7 @@
         "id": 3640,
         "name": "Textbooks",
         "price": 1500,
-        "unit": 1
+        "unit": 0
       },
       {
         "id": 3594,
@@ -46,8 +46,8 @@
       {
         "id": 2800,
         "name": "agbado",
-        "unit": 0,
-        "price": 200
+        "price": 200,
+        "unit": 477
       },
       {
         "id": 4315,
@@ -59,7 +59,7 @@
         "id": 4866,
         "name": "Android 11 devices",
         "price": 100000,
-        "unit": 13
+        "unit": 14
       },
       {
         "id": 4561,
@@ -70,13 +70,35 @@
     ],
     "sales": [
       {
-        "id": 4315,
-        "name": "Jeans",
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
         "unit": 1,
-        "price": 15000,
-        "date": "4/21/2023, 10:37:24 PM"
+        "date": "4/21/2023, 11:02:44 PM"
       }
     ],
-    "purchases": []
+    "purchases": [
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 100000,
+        "unit": 1,
+        "date": "4/21/2023, 11:04:30 PM"
+      },
+      {
+        "id": 4653,
+        "name": "Recharge card - 100",
+        "price": 200,
+        "unit": 25,
+        "date": "4/13/2023, 11:10:00 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 200,
+        "unit": 477,
+        "date": "4/1/2023, 11:10:00 PM"
+      }
+    ]
   }
 }

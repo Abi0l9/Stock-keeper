@@ -196,10 +196,12 @@ export const groupTransactionsByDate = (transactions: TransactionType[]) => {
     transactions.forEach((transaction) => {
       const date = dateSplitter(transaction.date);
 
-      if (objToReturn[date]) {
-        //if date exists as a key with an array as value, push transaction
+      if (!objToReturn[date]) {
+        //if date exists as a key, with an array as value, push transaction
+        //else, create an array, first.
+        objToReturn[date] = [];
         objToReturn[date].push(transaction);
-      } else objToReturn[date] = []; //else initialize with an empty array with date as a key
+      }
     });
 
   const mapToKVpairs = Object.entries(objToReturn).map(([key, values]) => {
