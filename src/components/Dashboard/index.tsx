@@ -76,8 +76,8 @@ function Dashboard() {
 
   return (
     <div>
-      <h2>Stock Lists</h2>
       <div>{stocks.sales?.length ? <HeaderStat /> : "No sales yet"}</div>
+      <h2>Stock Lists</h2>
       <br />
       <div>
         <form>

@@ -4,6 +4,8 @@ import {
   salesStatGetter,
   stockStatGetter,
 } from "../../utils";
+import { Box } from "@mui/material";
+import CardComponent from "../MUI/Card";
 
 function HeaderStat() {
   const sales = useStock().sales;
@@ -15,27 +17,20 @@ function HeaderStat() {
   const lastAdded = lastAddedProduct(purchases);
 
   return (
-    <div>
-      <article>
-        <b>Most sales</b> <br />
-        Item: {highest.stock}
-        <br />
-        Units Sold: <b>{highest.value}</b>
-      </article>
-      <article>
-        <b>Total Amount of Sales</b> <br />#{totalSales}
-        <br />
-      </article>
-      <article>
-        <b>Total Assets in Store</b> <br />#{assets}
-        <br />
-      </article>
-      <article>
-        <b>Last Added Product</b> <br />
-        <span>{lastAdded?.name}</span>
-        <br />
-      </article>
-    </div>
+    <Box sx={{ maxWidth: "85vw", margin: "0 auto" }}>
+      <Box>
+        <CardComponent
+          header={"Most Sales"}
+          item={highest.stock}
+          units={highest.value}
+        />
+      </Box>
+      <Box sx={{ display: "flex" }}>
+        <CardComponent header={"Total Amount of Sales:"} misc={totalSales} />
+        <CardComponent header={"Total Assets in Store: "} misc={assets} />
+        <CardComponent header={"Last Added Product: "} misc={lastAdded?.name} />
+      </Box>
+    </Box>
   );
 }
 
