@@ -196,8 +196,10 @@ export const groupTransactionsByDate = (transactions: TransactionType[]) => {
     transactions.forEach((transaction) => {
       const date = dateSplitter(transaction.date);
 
-      if (!objToReturn[date]) {
+      if (objToReturn[date]) {
         //if date exists as a key, with an array as value, push transaction
+        objToReturn[date].push(transaction);
+      } else {
         //else, create an array, first.
         objToReturn[date] = [];
         objToReturn[date].push(transaction);

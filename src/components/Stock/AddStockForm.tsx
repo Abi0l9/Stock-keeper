@@ -5,9 +5,15 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { addOneStock } from "../../reducers/stock";
 
+import { TextField, Box, Button, Tooltip } from "@mui/material";
+
 type Props = Record<"stocks", Store>;
 
-function AddStockForm() {
+type ModalProps = {
+  setModalState: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function AddStockForm({ setModalState }: ModalProps) {
   const store = useSelector((state: Props) => state.stocks);
   const dispatch = useAppDispatch();
   const id = generateId();
@@ -50,6 +56,8 @@ function AddStockForm() {
       nameFieldClear();
       unitFieldClear();
       priceFieldClear();
+      //close modal
+      setModalState(false);
     } catch (error) {
       let errMsg = "Something occured, ";
       if (axios.isAxiosError(error)) {
@@ -62,17 +70,46 @@ function AddStockForm() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <p>
-          <label htmlFor={nameField.id}>{nameField.name}</label>:{" "}
-          <input {...nameField} required />
-          <br />
-          <label htmlFor={unitField.id}>{unitField.name}</label>:{" "}
-          <input {...unitField} required />
-          <br />
-          <label htmlFor={priceField.id}>{priceField.name}</label>:{" "}
-          <input {...priceField} required />
-        </p>
-        <button type="submit">Add</button>
+        <Box>
+          <Tooltip title="Name of item">
+            <TextField
+              variant="standard"
+              label={nameField.name}
+              {...nameField}
+              required
+            />
+          </Tooltip>
+        </Box>
+        <Box>
+          <Tooltip title="Amount to be added">
+            <TextField
+              variant="standard"
+              label={unitField.name}
+              {...unitField}
+              required
+            />
+          </Tooltip>
+        </Box>
+        <Box>
+          <Tooltip title="Price of item">
+            <TextField
+              variant="standard"
+              label={priceField.name}
+              {...priceField}
+              required
+            />
+          </Tooltip>
+        </Box>
+        <Box sx={{ mt: 1 }}>
+          <Button
+            color="success"
+            variant="contained"
+            size="small"
+            type="submit"
+          >
+            Add
+          </Button>
+        </Box>
       </form>
     </div>
   );

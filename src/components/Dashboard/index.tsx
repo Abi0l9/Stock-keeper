@@ -1,16 +1,22 @@
+import { useState } from "react";
 import { sort, StockType, Store } from "../../types";
-import { Link } from "react-router-dom";
-import AddStockForm from "../Stock/AddStockForm";
+import { generalSortOptions } from "../../const";
+import { stockSorter } from "../../utils";
+
 import { useAppDispatch, useStock } from "../../hooks";
 import { updateOneStock } from "../../reducers/stock";
-import { generalSortOptions } from "../../const";
-import { useState } from "react";
-import { stockSorter } from "../../utils";
+
 import HeaderStat from "../Statistics/HeaderStat";
+import StockList from "../Stock/StockList";
+
+import { Box, Button } from "@mui/material";
+import AddStockModal from "../Modals/AddStockModal";
 
 function Dashboard() {
   const stocks = useStock();
   const dispatch = useAppDispatch();
+  const [modalState, setModalState] = useState(false);
+
   const [selectedValue, setSelectedValue] = useState<sort>("name (a-z)");
   const sortedData = stockSorter(stocks.stock, selectedValue);
 
@@ -77,8 +83,10 @@ function Dashboard() {
   return (
     <div>
       <div>{stocks.sales?.length ? <HeaderStat /> : "No sales yet"}</div>
-      <h2>Stock Lists</h2>
-      <br />
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <h2>Stock Lists</h2>
+        <Button onClick={() => setModalState(!modalState)}>New Stock</Button>
+      </Box>
       <div>
         <form>
           <span>Sort: </span>
@@ -91,33 +99,13 @@ function Dashboard() {
           </select>
         </form>
       </div>
-      <ul>
-        {sortedData?.length > 0
-          ? sortedData.map((s) => (
-              <li key={s.id}>
-                <Link to={`/stock/${s.id}`}> {s.name}</Link> || units in store :{" "}
-                {s.unit}
-                <div>
-                  <button
-                    onClick={() => handleSingleTransaction(s, "buy")}
-                    type="button"
-                  >
-                    add to store
-                  </button>
-                  <button
-                    onClick={() => handleSingleTransaction(s, "sell")}
-                    type="button"
-                  >
-                    sell one
-                  </button>
-                </div>
-              </li>
-            ))
-          : "Nothing is here"}
-      </ul>
-      <div>
-        <AddStockForm />
-      </div>
+      <StockList
+        sortedData={sortedData}
+        handleSingleTransaction={handleSingleTransaction}
+      />
+      <Box>
+        <AddStockModal modalState={modalState} setModalState={setModalState} />
+      </Box>
     </div>
   );
 }

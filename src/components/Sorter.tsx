@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { options } from "../const";
 import { sort, TransactionType } from "../types";
-import { groupTransactionsByDate, sorter, timeSplitter } from "../utils";
+import { groupTransactionsByDate } from "../utils";
+import HistoryTable from "./MUI/HistoryTable";
 
 type Props = {
   transaction: TransactionType[];
@@ -36,15 +37,11 @@ function Sorter({ transaction }: Props) {
               <b>{Object.keys(data)}</b>
             </p>
             <div key={idx}>
-              {Object.values(data).map((trans) =>
-                sorter(trans, selectedValue).map((t, i) => (
-                  <div key={t.date + i}>
-                    {" "}
-                    {i + 1} - {t.name} | {t.unit} | {t.price} |{" "}
-                    {t.unit * t.price} | {timeSplitter(t.date)}
-                  </div>
-                ))
-              )}
+              {Object.values(data).map((trans, idxi) => (
+                <div key={idxi}>
+                  <HistoryTable data={trans} selectedValue={selectedValue} />
+                </div>
+              ))}
             </div>
           </div>
         ))}
