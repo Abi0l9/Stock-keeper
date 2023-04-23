@@ -7,6 +7,7 @@ import {
   TableRow,
   Paper,
   Box,
+  Tooltip,
   Link,
   Button,
 } from "@mui/material";
@@ -27,7 +28,9 @@ const ListTable = ({ sortedData, handleSingleTransaction }: Props) => {
               <TableCell>ID</TableCell>
               <TableCell>Item</TableCell>
               <TableCell>Units in Store</TableCell>
-              <TableCell>Quick transactions</TableCell>
+              <Tooltip title={"quickly purchase or sell an item in store"}>
+                <TableCell>Quick transactions</TableCell>
+              </Tooltip>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -41,12 +44,16 @@ const ListTable = ({ sortedData, handleSingleTransaction }: Props) => {
                 </TableCell>
                 <TableCell>{s.unit}</TableCell>
                 <TableCell>
-                  <Button onClick={() => handleSingleTransaction(s, "buy")}>
-                    +
-                  </Button>
-                  <Button onClick={() => handleSingleTransaction(s, "sell")}>
-                    -
-                  </Button>
+                  <Tooltip title={`add one ${s.name} to store`}>
+                    <Button onClick={() => handleSingleTransaction(s, "buy")}>
+                      +
+                    </Button>
+                  </Tooltip>
+                  <Tooltip title={`sell one ${s.name}`}>
+                    <Button onClick={() => handleSingleTransaction(s, "sell")}>
+                      -
+                    </Button>
+                  </Tooltip>
                 </TableCell>
               </TableRow>
             ))}
