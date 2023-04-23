@@ -5,6 +5,8 @@ import { updateOneStock } from "../../reducers/stock";
 import { TransactionType, StockType, Store } from "../../types";
 import { UnitCompare, dateParser, handleBulkUpdate } from "../../utils";
 
+import { TextField, Box, Button } from "@mui/material";
+
 type Props = {
   id: number;
   name: string;
@@ -59,21 +61,23 @@ const EditStock = ({ id, name, price, unit, setOpenForm }: Props) => {
   return (
     <div>
       <form>
-        <p>
-          <label htmlFor="price">Price: </label>
-          <input
+        <Box sx={{ mb: 2 }}>
+          <TextField
+            label="price"
             title="price"
             type="number"
             name="price"
             id="price"
             value={newPrice}
             onChange={(e) => setNewPrice(Number(e.target.value))}
+            variant="standard"
             required
           />
-        </p>
-        <p>
-          <label htmlFor="unit">Units in store: </label>
-          <input
+        </Box>
+        <Box sx={{ mb: 2 }}>
+          <TextField
+            variant="standard"
+            label="unit"
             title="unit"
             type="number"
             name="unit"
@@ -82,10 +86,11 @@ const EditStock = ({ id, name, price, unit, setOpenForm }: Props) => {
             onChange={(e) => setNewUnit(Number(e.target.value))}
             required
           />
-        </p>
-        <p>
-          <label htmlFor="date">Date: </label>
-          <input
+        </Box>
+        <Box sx={{ mb: 2 }}>
+          <TextField
+            variant="standard"
+            label="date"
             title="date"
             type="datetime-local"
             name="date"
@@ -95,10 +100,15 @@ const EditStock = ({ id, name, price, unit, setOpenForm }: Props) => {
               !e.target.value ? setNewDate(newDate) : setNewDate(e.target.value)
             }
           />
-        </p>
-        <button onClick={handleSubmit} type="submit">
+        </Box>
+        <Button
+          onClick={handleSubmit}
+          type="submit"
+          variant="contained"
+          color="success"
+        >
           Update stock
-        </button>
+        </Button>
       </form>
     </div>
   );
