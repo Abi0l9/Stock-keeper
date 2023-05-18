@@ -3,6 +3,8 @@ import { options } from "../const";
 import { sort, TransactionType } from "../types";
 import { groupTransactionsByDate } from "../utils";
 import HistoryTable from "./MUI/HistoryTable";
+import { Box } from "@mui/material"
+import {ArrowUpward, ArrowDownward} from '@mui/icons-material';
 
 type Props = {
   transaction: TransactionType[];
@@ -15,6 +17,12 @@ function Sorter({ transaction }: Props) {
   const handleFieldSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedValue(e.target.value as sort);
   };
+  const [openHistory, setOPenHistory] = useState(false);
+  const style = {display: openHistory ? "": "none"}
+  
+  const historyIcon = openHistory ? <ArrowUpward /> : <ArrowDownward />
+  
+  const toggleArrow = () => setOPenHistory(!openHistory)
 
   return (
     <div>
@@ -33,14 +41,15 @@ function Sorter({ transaction }: Props) {
       <div>
         {groupedData.map((data, idx) => (
           <div key={idx}>
-            <p>
+            <div>
               <b>{Object.keys(data)}</b>
-            </p>
-            <div key={idx}>
+            </div>
+            <div key={idx} /*style={style}*/>
               {Object.values(data).map((trans, idxi) => (
-                <div key={idxi}>
+                <Box key={idxi}>
                   <HistoryTable data={trans} selectedValue={selectedValue} />
-                </div>
+                
+                </Box>
               ))}
             </div>
           </div>
