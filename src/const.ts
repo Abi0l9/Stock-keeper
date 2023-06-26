@@ -1,6 +1,6 @@
 import { optionsDataType } from "./types";
 
-export const baseUrl = "https://json-server-9vy1.onrender.com";
+export const baseUrl = "https://stock-keeper-server.onrender.com/store";
 
 export const options: optionsDataType = [
   "latest",
