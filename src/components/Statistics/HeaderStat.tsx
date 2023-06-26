@@ -17,7 +17,7 @@ function HeaderStat() {
   const lastAdded = lastAddedProduct(purchases);
 
   return (
-    <Box sx={{ maxWidth: "85vw", margin: "0 auto" }}>
+    <Box sx={{ margin: "0 auto" }}>
       <Box>
         <CardComponent
           header={"Most Sales"}
@@ -26,9 +26,15 @@ function HeaderStat() {
         />
       </Box>
       <Box sx={{ display: "flex" }}>
-        <CardComponent header={"Total Amount of Sales:"} misc={totalSales} />
-        <CardComponent header={"Total Assets in Store: "} misc={assets} />
-        <CardComponent header={"Last Added Product: "} misc={lastAdded?.name} />
+        <Box sx={{flexGrow: 1}}>
+          <CardComponent header={"Total Amount of Sales:"} misc={totalSales} />
+        </Box>
+        <Box sx={{flexGrow: 1}}>
+          <CardComponent header={"Total Assets in Store: "} misc={assets} />
+        </Box>
+        <Box sx={{flexGrow: 1}}>
+          <CardComponent header={"Last Added Product: "} misc={lastAdded?.name} />
+        </Box>
       </Box>
     </Box>
   );

@@ -5,19 +5,19 @@
         "id": 4186,
         "name": "Exercise Books",
         "price": 350,
-        "unit": 1482
+        "unit": 777
       },
       {
         "id": 4653,
         "name": "Recharge card - 100",
         "price": 200,
-        "unit": 70
+        "unit": 69
       },
       {
         "id": 875,
         "name": "Earpiece",
         "price": 300,
-        "unit": 0
+        "unit": 20
       },
       {
         "id": 3640,
@@ -59,7 +59,7 @@
         "id": 4866,
         "name": "Android 11 devices",
         "price": 110000,
-        "unit": 12
+        "unit": 6
       },
       {
         "id": 4561,
@@ -151,6 +151,398 @@
         "price": 110000,
         "unit": 13,
         "date": "4/22/2023, 6:09:00 PM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 682,
+        "date": "4/24/2023, 10:33:00 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:34:10 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:34:12 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:34:14 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:35:06 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:35:13 AM"
+      },
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 110000,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:31 AM"
+      },
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 110000,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:33 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:40 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:41 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:41 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:41 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:42 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:42 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:43 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:44 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:45 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:53 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:54 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:55 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:55 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:56 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:36:57 AM"
+      },
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 110000,
+        "unit": 1,
+        "date": "4/24/2023, 10:43:48 AM"
+      },
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 110000,
+        "unit": 1,
+        "date": "4/24/2023, 10:43:52 AM"
+      },
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 110000,
+        "unit": 1,
+        "date": "4/24/2023, 10:43:54 AM"
+      },
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 110000,
+        "unit": 1,
+        "date": "4/24/2023, 10:43:55 AM"
+      },
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 110000,
+        "unit": 1,
+        "date": "4/24/2023, 10:43:56 AM"
+      },
+      {
+        "id": 4866,
+        "name": "Android 11 devices",
+        "price": 110000,
+        "unit": 1,
+        "date": "4/24/2023, 10:43:57 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:03 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:17 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:17 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:18 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:18 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:18 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:19 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:19 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:19 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:20 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:20 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:29 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:29 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:30 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:30 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:30 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:30 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:30 AM"
+      },
+      {
+        "id": 4186,
+        "name": "Exercise Books",
+        "price": 350,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:31 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:42 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:43 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:43 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:44 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:44 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/24/2023, 10:44:44 AM"
+      },
+      {
+        "id": 4653,
+        "name": "Recharge card - 100",
+        "price": 200,
+        "unit": 1,
+        "date": "4/24/2023, 10:55:00 AM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 250,
+        "unit": 1,
+        "date": "4/26/2023, 3:41:38 PM"
       }
     ],
     "purchases": [
