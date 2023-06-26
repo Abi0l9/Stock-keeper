@@ -48,7 +48,7 @@ function Dashboard() {
     const data = stocks.stock.find((s) => s.id === item.id)!;
 
     if (type === "buy") {
-      let newStore: Store = {
+      const newStore: Store = {
         ...stocks,
         stock,
         purchases: [
@@ -62,7 +62,7 @@ function Dashboard() {
       };
       dispatch(updateOneStock(newStore));
     } else if (type === "sell") {
-      let newStore: Store = {
+      const newStore: Store = {
         ...stocks,
         stock,
         sales: [

@@ -190,7 +190,7 @@ export const lastAddedProduct = (transaction: StoreTypes): StockType => {
 };
 
 export const groupTransactionsByDate = (transactions: TransactionType[]) => {
-  let objToReturn: Record<string, TransactionType[]> = {};
+  const objToReturn: Record<string, TransactionType[]> = {};
 
   if (transactions)
     transactions.forEach((transaction) => {

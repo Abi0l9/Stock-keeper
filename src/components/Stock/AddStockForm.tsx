@@ -1,3 +1,4 @@
+import React from "react";
 import { useAppDispatch, useField } from "../../hooks";
 import { PurchasesType, StockType, Store } from "../../types";
 import { generateId } from "../../utils";

@@ -1,3 +1,4 @@
+import React from "react";
 import { SalesType } from "../../../types";
 import Sorter from "../../Sorter";
 

@@ -7,6 +7,7 @@ import Stock from "./components/Stock";
 import { useEffect } from "react";
 import { getAllStocks } from "./reducers/stock";
 import { useAppDispatch } from "./hooks";
+import { Box } from "@mui/material";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -18,12 +19,14 @@ function App() {
   return (
     <div>
       <Menu />
-      <Routes>
-        <Route path="*" element={<Dashboard />} />
-        <Route path="/sales" element={<Sales />} />
-        <Route path="/purchases" element={<Purchases />} />
-        <Route path="/stock/:id" element={<Stock />} />
-      </Routes>
+      <Box sx={{ px: 2 }}>
+        <Routes>
+          <Route path="*" element={<Dashboard />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="/purchases" element={<Purchases />} />
+          <Route path="/stock/:id" element={<Stock />} />
+        </Routes>
+      </Box>
     </div>
   );
 }

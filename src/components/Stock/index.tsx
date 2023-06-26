@@ -1,13 +1,15 @@
+import React from "react";
 import { useState } from "react";
 import { Store } from "../../types";
 import { useMatch } from "react-router-dom";
 import EditStock from "./EditStock";
 import { useSelector } from "react-redux";
+import { Button } from "@mui/material";
 
 type Props = Record<"stocks", Store>;
 
 function Stock() {
-  const [openForm, setOpenForm] = useState<Boolean>(false);
+  const [openForm, setOpenForm] = useState<boolean>(false);
   const formDisplay = { display: openForm ? "" : "none" };
   const btnDisplay = { display: openForm ? "none" : "" };
 
@@ -36,9 +38,16 @@ function Stock() {
         </div>
       )}
       <div>
-        <button style={btnDisplay} type="button" onClick={handleBtnClick}>
+        <Button
+          size="small"
+          color="primary"
+          variant="outlined"
+          style={btnDisplay}
+          type="button"
+          onClick={handleBtnClick}
+        >
           Make changes to stock
-        </button>
+        </Button>
       </div>
       <div style={formDisplay}>
         {selectedStock && (

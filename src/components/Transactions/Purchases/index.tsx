@@ -1,3 +1,4 @@
+import React from "react";
 import { useStock } from "../../../hooks";
 import PurchaseHistory from "./PurchaseHistory";
 

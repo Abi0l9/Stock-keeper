@@ -23,7 +23,7 @@
         "id": 3640,
         "name": "Textbooks",
         "price": 1500,
-        "unit": 0
+        "unit": 1
       },
       {
         "id": 3594,
@@ -47,7 +47,7 @@
         "id": 2800,
         "name": "agbado",
         "price": 200,
-        "unit": 477
+        "unit": 478
       },
       {
         "id": 4315,
@@ -223,6 +223,20 @@
         "unit": 3,
         "price": 250000,
         "date": "4/22/2023, 9:04:41 PM"
+      },
+      {
+        "id": 2800,
+        "name": "agbado",
+        "price": 200,
+        "unit": 1,
+        "date": "6/26/2023, 9:30:18 AM"
+      },
+      {
+        "id": 3640,
+        "name": "Textbooks",
+        "price": 1500,
+        "unit": 1,
+        "date": "6/26/2023, 9:38:14 AM"
       }
     ]
   }

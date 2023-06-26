@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../hooks";
@@ -12,7 +13,7 @@ type Props = {
   name: string;
   price: number;
   unit: number;
-  setOpenForm: React.Dispatch<React.SetStateAction<Boolean>>;
+  setOpenForm: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 type storeType = Record<"stocks", Store>;

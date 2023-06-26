@@ -1,3 +1,4 @@
+import React from "react";
 import { StockType } from "../../types";
 import { Box } from "@mui/material";
 import ListTable from "./ListTable";
