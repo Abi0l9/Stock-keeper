@@ -31,7 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "npx json-server -p 3001 -w db.json",
-    "concurrently": "concurrently \"npm start:app\" \"npm run server\""
+    "concurrently": "concurrently \"npm start\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
